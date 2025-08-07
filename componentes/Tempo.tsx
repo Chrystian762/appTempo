@@ -7,18 +7,19 @@ interface propsTempo{
     min:number,
     description:string,
     condition:string,
+    lua:string,
 }
 
 
 
-export default function Tempo({date, max, min, description, condition} :propsTempo) {
+export default function Tempo({date, max, min, description, condition, lua} :propsTempo) {
 
   const icones: Record<string, any> = {
     clear_day: require('../assets/png/clear_day.png'),
     clear_night: require('../assets/png/clear_night.png'),
-      
+    cloud: require('../assets/png/cloud.png'),
     cloudly_day: require('../assets/png/cloudly_day.png'),
-    
+    cloudly_night: require('../assets/png/cloudly_night.png'),
     fog: require('../assets/png/fog.png'),
     hail: require('../assets/png/hail.png'),
     none_day: require('../assets/png/none_day.png'),
@@ -29,15 +30,21 @@ export default function Tempo({date, max, min, description, condition} :propsTem
     
   }
 
+   
+
   return(
     <View style={styles.principal}>
-        <Text style={styles.texto}>Previsãp para o dia:</Text>
+        <Text style={styles.texto}>Previsãp para o dia:{date}</Text>
         <Text style={styles.texto}>Máx: {max}</Text>
         <Text style={styles.texto}>Min: {min}</Text>
         <Text style={styles.texto}>Descrição: {description}</Text>
         <Image 
           style={styles.imagem}
           source={icones[condition]}
+        />
+         <Image 
+          style={styles.imagem}
+          source={{uri:`https://assets.hgbrasil.com/weather/icons/moon/${lua}.png`}}
         />
     </View>
   );
@@ -49,7 +56,8 @@ export default function Tempo({date, max, min, description, condition} :propsTem
 
 const styles = StyleSheet.create({
        imagem:{
-
+          width:80,
+          height:80
           },
         principal:{
         width: '80%',
