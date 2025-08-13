@@ -6,12 +6,19 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from './views/Home';
 import Itanhaem from './views/Itanhaem';
+import Mongagua from './views/Mongagua';
+import Peruibe from './views/Peruibe';
+import SaoPaulo from './views/SaoPaulo';
 
 
 const RootStack = createNativeStackNavigator({
   screens: {
     Home: Home,
-    Itanhaem:Itanhaem
+    Itanhaem:Itanhaem,
+    Mongagua:Mongagua,
+    Peruibe:Peruibe,
+    SaoPaulo:SaoPaulo
+
   },
 });
 

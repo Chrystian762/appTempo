@@ -22,7 +22,7 @@ export default function Home(){
 
 
 
-                <TouchableOpacity onPress={()=>navigation.navigate('' as never)}     style={styles.btn}>
+                <TouchableOpacity onPress={()=>navigation.navigate('Mongagua' as never)}     style={styles.btn}>
 
                     <Text style={styles.textoBtn}>Mongaguá</Text>
                 </TouchableOpacity>
@@ -30,9 +30,15 @@ export default function Home(){
 
 
 
-                <TouchableOpacity onPress={()=>navigation.navigate('' as never)}     style={styles.btn}>
+                <TouchableOpacity onPress={()=>navigation.navigate('Peruibe' as never)}     style={styles.btn}>
 
                     <Text style={styles.textoBtn}>Peruíbe</Text>
+                </TouchableOpacity>
+
+                
+                <TouchableOpacity onPress={()=>navigation.navigate('SaoPaulo' as never)}     style={styles.btn}>
+
+                    <Text style={styles.textoBtn}>São Paulo</Text>
                 </TouchableOpacity>
             </View>
     );
